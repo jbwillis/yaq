@@ -616,16 +616,22 @@ wheels = [
 [[package]]
 name = "yaq"
 version = "0.1.0"
-source = { virtual = "." }
+source = { editable = "." }
 dependencies = [
-    { name = "marimo" },
     { name = "numpy" },
+]
+
+[package.dev-dependencies]
+dev = [
+    { name = "marimo" },
     { name = "pytest" },
 ]
 
 [package.metadata]
-requires-dist = [
+requires-dist = [{ name = "numpy", specifier = ">=2.5.4" }]
+
+[package.metadata.requires-dev]
+dev = [
     { name = "marimo", specifier = ">=0.24.1" },
-    { name = "numpy", specifier = ">=2.5.4" },
     { name = "pytest", specifier = ">=9.1.1" },
 ]

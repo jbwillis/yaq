@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from quaternion import *
+from yaq.quaternion import *
 
 def test_skew():
     e1 = np.array([1, 0, 0])

@@ -5,11 +5,22 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.14"
 dependencies = [
-    "marimo>=0.24.1",
     "numpy>=2.5.4",
+]
+
+[dependency-groups]
+dev = [
+    "marimo>=0.24.1",
     "pytest>=9.1.1",
 ]
 
+[build-system]
+requires = ["uv_build>=0.9.15,<0.10"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "yaq"
+module-root = "src/py"
+
 [tool.pytest.ini_options]
 testpaths = ["test/py"]
-pythonpath = ["src/py"]
